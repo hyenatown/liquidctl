@@ -71,6 +71,11 @@ _SPEED_CHANNELS_KRAKEN2023 = {
     "fan": ([0x2, 0x1, 0x1], 0, 100),
 }
 
+_SPEED_CHANNELS_KRAKEN2024 = {
+    "pump": ([0x1, 0x1, 0x0], 20, 100),
+    "fan": ([0x2, 0x1, 0x1], 0, 100),
+}
+
 _CRITICAL_TEMPERATURE = 59
 
 # Available color channels and IDs for model X coolers
@@ -81,7 +86,9 @@ _COLOR_CHANNELS_KRAKENZ = {
     "external": 0b001,
 }
 
-_COLOR_CHANNELS_KRAKEN2023 = {"ring": 0b001, "external": 0b010, "sync": 0b111}
+_COLOR_CHANNELS_KRAKEN2023 = {}
+
+_COLOR_CHANNELS_KRAKEN2024 = {"ring": 0b001, "external": 0b010, "sync": 0b111}
 
 _HWMON_CTRL_MAPPING_KRAKENX = {"pump": 1}
 
@@ -598,8 +605,8 @@ class KrakenZ3(KrakenX3):
             0x3012,
             "NZXT Kraken 2024 Elite RGB",
             {
-                "speed_channels": _SPEED_CHANNELS_KRAKEN2023,
-                "color_channels": _COLOR_CHANNELS_KRAKEN2023,
+                "speed_channels": _SPEED_CHANNELS_KRAKEN2024,
+                "color_channels": _COLOR_CHANNELS_KRAKEN2024,
                 "hwmon_ctrl_mapping": _HWMON_CTRL_MAPPING_KRAKENZ,
                 "bulk_buffer_size": 1024 * 1024 * 2,  # 2 MB
                 "lcd_resolution": (640, 640),
